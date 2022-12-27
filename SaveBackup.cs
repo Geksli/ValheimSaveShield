@@ -63,7 +63,7 @@ namespace ValheimSaveShield
         {
             get
             {
-                if (new FileInfo(this.backupData.backupPath).Directory.FullName.StartsWith($@"{Properties.Settings.Default.BackupFolder}\worlds\"))
+                if (new FileInfo(this.backupData.backupPath).Directory.FullName.StartsWith($@"{Properties.Settings.Default.BackupFolder}\worlds_local\"))
                 {
                     return "World";
                 }
@@ -143,7 +143,7 @@ namespace ValheimSaveShield
                 var paths = new List<string>();
                 foreach (var savePath in Properties.Settings.Default.SaveFolders)
                 {
-                    paths.Add($@"{savePath}\{this.Type.ToLower()}s\{this.FileName}");
+                    paths.Add($@"{savePath}\{this.Type.ToLower()}s_local\{this.FileName}");
                 }
                 return paths;
             }
